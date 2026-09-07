@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Photo Text Editor</title>
+
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <div class="app">
+
+    <header>
+      <h1>📷 Photo Text Editor</h1>
+      <p>Add and edit text on your photos</p>
+    </header>
+
+    <div class="toolbar">
+
+      <label class="upload-btn">
+        📷 Upload Photo
+        <input
+          type="file"
+          id="imageInput"
+          accept="image/*"
+        >
+      </label>
+
+      <button id="addTextBtn">
+        ➕ Add Text
+      </button>
+
+      <div class="control">
+        <label>Font</label>
+
+        <select id="fontFamily">
+          <option value="Arial">Arial</option>
+          <option value="Georgia">Georgia</option>
+          <option value="Verdana">Verdana</option>
+          <option value="Times New Roman">
+            Times New Roman
+          </option>
+          <option value="Courier New">
+            Courier New
+          </option>
+          <option value="Impact">Impact</option>
+        </select>
+      </div>
+
+      <div class="control">
+        <label>Size</label>
+
+        <input
+          type="number"
+          id="fontSize"
+          value="40"
+          min="8"
+          max="300"
+        >
+      </div>
+
+      <div class="control">
+        <label>Color</label>
+
+        <input
+          type="color"
+          id="fontColor"
+          value="#ffffff"
+        >
+      </div>
+
+      <button id="boldBtn">
+        <b>B</b>
+      </button>
+
+      <button id="italicBtn">
+        <i>I</i>
+      </button>
+
+      <div class="control">
+        <label>Opacity</label>
+
+        <input
+          type="range"
+          id="opacity"
+          min="0.1"
+          max="1"
+          step="0.1"
+          value="1"
+        >
+      </div>
+
+      <button
+        id="deleteBtn"
+        class="danger"
+      >
+        🗑 Delete
+      </button>
+
+      <button
+        id="downloadBtn"
+        class="download"
+      >
+        💾 Download
+      </button>
+
+    </div>
+
+    <div class="hint">
+      Upload photo → Add Text → Double click text to edit →
+      Drag text to move
+    </div>
+
+    <main class="workspace">
+
+      <div
+        id="emptyState"
+        class="empty-state"
+      >
+        <div class="empty-icon">🖼️</div>
+
+        <h2>Upload your photo</h2>
+
+        <p>
+          Choose an image to start editing
+        </p>
+      </div>
+
+      <div
+        id="canvasArea"
+        class="canvas-area"
+        hidden
+      >
+
+        <canvas id="mainCanvas"></canvas>
+
+        <div id="textContainer"></div>
+
+      </div>
+
+    </main>
+
+  </div>
+
+  <script src="script.js"></script>
+
+</body>
+</html>
