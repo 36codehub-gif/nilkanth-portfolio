@@ -1367,3 +1367,22 @@ footer p {
         justify-content: center;
     }
 }
+
+/* Scroll animation */
+
+.reveal {
+    opacity: 0;
+    transform: translateY(25px);
+    transition:
+        opacity 0.7s ease,
+        transform 0.7s ease;
+}
+
+.reveal.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+nav a.active {
+    color: var(--accent);
+}
