@@ -1,0 +1,288 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #111827;
+  color: white;
+}
+
+.app {
+  min-height: 100vh;
+}
+
+/* Header */
+
+header {
+  padding: 18px 20px;
+  background: #1f2937;
+  border-bottom: 1px solid #374151;
+}
+
+header h1 {
+  margin: 0;
+  font-size: 22px;
+}
+
+header p {
+  margin: 5px 0 0;
+  color: #9ca3af;
+  font-size: 14px;
+}
+
+
+/* Toolbar */
+
+.toolbar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  padding: 12px;
+  background: #1f2937;
+  border-bottom: 1px solid #374151;
+}
+
+button,
+select,
+input {
+  font: inherit;
+}
+
+button {
+  border: 0;
+  border-radius: 7px;
+  padding: 9px 13px;
+  cursor: pointer;
+  background: #374151;
+  color: white;
+}
+
+button:hover {
+  background: #4b5563;
+}
+
+.upload-btn {
+  display: inline-flex;
+  align-items: center;
+  padding: 9px 13px;
+  border-radius: 7px;
+  cursor: pointer;
+  background: #2563eb;
+}
+
+.upload-btn:hover {
+  background: #1d4ed8;
+}
+
+.upload-btn input {
+  display: none;
+}
+
+.download {
+  background: #16a34a;
+}
+
+.download:hover {
+  background: #15803d;
+}
+
+.danger {
+  background: #dc2626;
+}
+
+.danger:hover {
+  background: #b91c1c;
+}
+
+
+/* Controls */
+
+.control {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  background: #111827;
+  padding: 5px 8px;
+  border-radius: 7px;
+}
+
+.control label {
+  font-size: 12px;
+  color: #d1d5db;
+}
+
+select,
+input[type="number"] {
+  background: #374151;
+  color: white;
+  border: 1px solid #4b5563;
+  border-radius: 5px;
+  padding: 5px;
+}
+
+input[type="color"] {
+  width: 35px;
+  height: 30px;
+  padding: 2px;
+  border: 0;
+  background: transparent;
+  cursor: pointer;
+}
+
+input[type="range"] {
+  width: 100px;
+}
+
+
+/* Hint */
+
+.hint {
+  padding: 8px 12px;
+  color: #9ca3af;
+  font-size: 12px;
+}
+
+
+/* Workspace */
+
+.workspace {
+  min-height: calc(100vh - 150px);
+  padding: 25px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: auto;
+}
+
+
+/* Empty State */
+
+.empty-state {
+  text-align: center;
+  border: 2px dashed #374151;
+  border-radius: 14px;
+  padding: 60px;
+  color: #9ca3af;
+}
+
+.empty-state h2 {
+  color: white;
+  margin-bottom: 8px;
+}
+
+.empty-icon {
+  font-size: 50px;
+}
+
+
+/* Canvas */
+
+.canvas-area {
+  position: relative;
+  display: inline-block;
+
+  box-shadow:
+    0 15px 50px rgba(0, 0, 0, 0.6);
+
+  background:
+    linear-gradient(
+      45deg,
+      #ddd 25%,
+      transparent 25%
+    ),
+    linear-gradient(
+      -45deg,
+      #ddd 25%,
+      transparent 25%
+    ),
+    linear-gradient(
+      45deg,
+      transparent 75%,
+      #ddd 75%
+    ),
+    linear-gradient(
+      -45deg,
+      transparent 75%,
+      #ddd 75%
+    );
+
+  background-size: 20px 20px;
+
+  background-position:
+    0 0,
+    0 10px,
+    10px -10px,
+    -10px 0;
+}
+
+#mainCanvas {
+  display: block;
+  max-width: 85vw;
+  max-height: 75vh;
+}
+
+
+/* Text Layer */
+
+#textContainer {
+  position: absolute;
+  inset: 0;
+}
+
+.text-layer {
+  position: absolute;
+
+  min-width: 30px;
+  min-height: 25px;
+
+  padding: 4px 7px;
+
+  cursor: move;
+
+  user-select: none;
+
+  white-space: pre;
+
+  border: 1px dashed transparent;
+
+  transform:
+    translate(-50%, -50%);
+}
+
+.text-layer.selected {
+  border-color: #60a5fa;
+}
+
+
+/* Mobile */
+
+@media (max-width: 700px) {
+
+  header h1 {
+    font-size: 18px;
+  }
+
+  .toolbar {
+    gap: 5px;
+  }
+
+  button,
+  .upload-btn {
+    padding: 8px 10px;
+  }
+
+  .workspace {
+    padding: 10px;
+  }
+
+  #mainCanvas {
+    max-width: 95vw;
+    max-height: 65vh;
+  }
+
+  .empty-state {
+    padding: 40px 20px;
+  }
+}
